@@ -7,8 +7,8 @@ lazy val root = (project in file("."))
 )
 
 libraryDependencies ++= Seq (
-	"org.scalamock"   %% "scalamock-scalatest-support"  % "3.6.0",
-	"org.scalatest"   %% "scalatest"                    % "3.0.5"
+  "org.scalamock"   %% "scalamock-scalatest-support"  % "3.6.0",
+  "org.scalatest"   %% "scalatest"                    % "3.0.5"
 )
 
 enablePlugins(PackPlugin)
