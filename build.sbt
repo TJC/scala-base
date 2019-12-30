@@ -15,4 +15,6 @@ libraryDependencies ++= Seq (
   "org.scalamock"   %% "scalamock"                    % "4.4.0",
 )
 
+scalacOptions ++= Seq("-Xlint", "-target:11")
+
 enablePlugins(PackPlugin)
