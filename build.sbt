@@ -3,18 +3,25 @@ lazy val root = (project in file("."))
   .settings(
     name         := "example",
     organization := "net.dryft",
-    scalaVersion := "2.13.1",
-    version      := "0.2.0"
+    scalaVersion := "2.13.4",
+    version      := "0.3.0"
 )
-
-// In Australia, this is much faster than the default external resolver
-externalResolvers := Seq(Resolver.jcenterRepo)
 
 libraryDependencies ++= Seq (
-  "org.scalatest"   %% "scalatest"                    % "3.1.0",
-  "org.scalamock"   %% "scalamock"                    % "4.4.0",
+  "org.scalatest"              %% "scalatest"     % "3.2.5",
+  "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
 )
 
-scalacOptions ++= Seq("-Xlint", "-target:11")
+scalacOptions ++= Seq(
+  "-feature",
+  "-Xlint",
+  "-language:higherKinds",
+  "-language:reflectiveCalls",
+  "-Ymacro-annotations",
+  "-target:11",
+  "-Wconf:cat=deprecation:w,cat=lint-byname-implicit:s,any:e",
+)
+
+javacOptions ++= Seq("--release", "11")
 
 enablePlugins(PackPlugin)
