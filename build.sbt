@@ -3,12 +3,12 @@ lazy val root = (project in file("."))
   .settings(
     name         := "example",
     organization := "net.dryft",
-    scalaVersion := "2.13.4",
+    scalaVersion := "2.13.6",
     version      := "0.3.0"
 )
 
 libraryDependencies ++= Seq (
-  "org.scalatest"              %% "scalatest"     % "3.2.5",
+  "org.scalatest"              %% "scalatest"     % "3.2.9",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
 )
 
